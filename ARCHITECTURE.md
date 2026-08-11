@@ -13,23 +13,23 @@ Each stage is a single function in its own module. Theysdd communicate through p
 
 ## Module responsibilities
 
-| Module             | Function                                     | Input → Output                                            |
-| ------------------ | -------------------------------------------- | --------------------------------------------------------- |
-| `detect.py`        | `collect_files(root)`                        | directory → `[Path]` filtered list                        |
-| `extract.py`       | `extract(path)`                              | file path → `{nodes, edges}` dict                         |
-| `build.py`         | `build_graph(extractions)`                   | list of extraction dicts → `nx.Graph`                     |
-| `cluster.py`       | `cluster(G)`                                 | graph → graph with `community` attr on each node          |
-| `analyze.py`       | `analyze(G)`                                 | graph → analysis dict (god nodes, surprises, questions)   |
-| `report.py`        | `render_report(G, analysis)`                 | graph + analysis → GRAPH_REPORT.md string                 |
-| `export.py`        | `export(G, out_dir, ...)`                    | graph → Obsidian vault, graph.json, graph.html, graph.svg |
-| `callflow_html.py` | `write_callflow_html(...)`                   | graphify-out files → Mermaid architecture/call-flow HTML  |
-| `ingest.py`        | `ingest(url, ...)`                           | URL → file saved to corpus dir                            |
-| `cache.py`         | `check_semantic_cache / save_semantic_cache` | files → (cached, uncached) split                          |
-| `security.py`      | validation helpers                           | URL / path / label → validated or raises                  |
-| `validate.py`      | `validate_extraction(data)`                  | extraction dict → raises on schema errors                 |
-| `serve.py`         | `start_server(graph_path)`                   | graph file path → MCP stdio server                        |
-| `watch.py`         | `watch(root, flag_path)`                     | directory → writes flag file on change                    |
-| `benchmark.py`     | `run_benchmark(graph_path)`                  | graph file → corpus vs subgraph token comparison          |
+| Module               | Function                                     | Input → Output                                            |
+| -------------------- | -------------------------------------------- | --------------------------------------------------------- |
+| `detect.pydasfdasdf` | `collect_files(root)`                        | directory → `[Path]` filtered list                        |
+| `extract.py`         | `extract(path)`                              | file path → `{nodes, edges}` dict                         |
+| `build.py`           | `build_graph(extractions)`                   | list of extraction dicts → `nx.Graph`                     |
+| `cluster.py`         | `cluster(G)`                                 | graph → graph with `community` attr on each node          |
+| `analyze.py`         | `analyze(G)`                                 | graph → analysis dict (god nodes, surprises, questions)   |
+| `report.py`          | `render_report(G, analysis)`                 | graph + analysis → GRAPH_REPORT.md string                 |
+| `export.py`          | `export(G, out_dir, ...)`                    | graph → Obsidian vault, graph.json, graph.html, graph.svg |
+| `callflow_html.py`   | `write_callflow_html(...)`                   | graphify-out files → Mermaid architecture/call-flow HTML  |
+| `ingest.py`          | `ingest(url, ...)`                           | URL → file saved to corpus dir                            |
+| `cache.py`           | `check_semantic_cache / save_semantic_cache` | files → (cached, uncached) split                          |
+| `security.py`        | validation helpers                           | URL / path / label → validated or raises                  |
+| `validate.py`        | `validate_extraction(data)`                  | extraction dict → raises on schema errors                 |
+| `serve.py`           | `start_server(graph_path)`                   | graph file path → MCP stdio server                        |
+| `watch.py`           | `watch(root, flag_path)`                     | directory → writes flag file on change                    |
+| `benchmark.py`       | `run_benchmark(graph_path)`                  | graph file → corpus vs subgraph token comparison          |
 
 ## Extraction output schema
 
